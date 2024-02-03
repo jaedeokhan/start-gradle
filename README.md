@@ -16,6 +16,9 @@ Gradle Docs는 7.5버전을 참고해서 공부를 진행했다.
    - task간의 종속성에 따라 실행 순서가 결정된다.
    - task 실행은 병렬로 발생할 수 있다.
 
+![image](https://github.com/jaedeokhan/start-gradle/assets/45028904/a584a1b0-84dd-406b-b258-58e3ecc8e3c9)
+
+
 ## gradle init
 gradle init 명령어를 사용하면 gradle 초기 샘플 프로젝트를 간단하게 만들 수 있다.
 
