@@ -2,6 +2,20 @@
 [Gradle Docs](https://docs.gradle.org/7.5/userguide/userguide.html)를 보면서 공부한 내용을 정리한다.
 Gradle Docs는 7.5버전을 참고해서 공부를 진행했다.
 
+## Build Phases
+1. Phase 1. Initialization
+   - settings.gradle 파일을 감지한다.
+   - Settings 인스턴스를 생성한다.
+   - 설정 파일을 평가하여 빌드를 구성하는 프로젝트 및 포함된 빌드를 결정한다.
+   - 모든 프로젝트에 대한 Project 인스턴스를 생성한다.
+2. Phase 2. Configuration
+   - build.gradle에 있는 모든 프로젝트의 빌드 스크립트를 평가한다.
+   - 요청된 작업에 대한 작업 그래프를 생성한다. (방향성 비순환 그래프 - DAG)
+3. Phase 3. Execution
+   - 선택한 task를 예약하고 실행한다.
+   - task간의 종속성에 따라 실행 순서가 결정된다.
+   - task 실행은 병렬로 발생할 수 있다.
+
 ## gradle init
 gradle init 명령어를 사용하면 gradle 초기 샘플 프로젝트를 간단하게 만들 수 있다.
 
