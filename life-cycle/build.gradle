@@ -1,0 +1,43 @@
+println 'This is executed during the configuration phase.'
+
+tasks.register('configured') {
+	println 'This is also executed during the configuration phase, because :configured is used the build.'
+}
+
+//tasks.register('test') {
+//	doLast {
+//		println 'This is executed during the execution phase.'
+//	}
+//}
+
+tasks.register('testBoth') {
+	doFirst {
+		println 'This is executed first during the execution phase.'
+	}
+	doLast {
+		println 'This is executed last during the execution phase.'
+	}
+	println 'This is executed during the configuration phase as well, because :testBoth used in the build.'
+}
+
+allprojects {
+    ext.hasTests = false
+    afterEvaluate { project ->
+        if (project.hasTests) {
+            println "Adding test task to $project"
+            project.task('test') {
+                doLast {
+                    println "Running tests for $project"
+                }
+            }
+        }
+    }
+}
+
+gradle.afterProject { project -> 
+	if (project.state.failure) {
+		println "Evaluation of $project FAILED"
+	} else {
+		println "Evaluation of $project succeeded"
+	}
+}
