@@ -9,7 +9,7 @@ gradle init 명령어를 사용하면 gradle 초기 샘플 프로젝트를 간�
 gradle init
 ```
 
-## [Building Java Applicatoins Sample](https://docs.gradle.org/7.5/samples/sample_building_java_applications.html)
+## java-app-sample [Building Java Applicatoins Sample](https://docs.gradle.org/7.5/samples/sample_building_java_applications.html)
 gradle init 명령어를 통해서 java application sample 프로젝트를 따라해봤다
 application을 생성하면 gradle 관련 폴더 및 쉘, app 밑에 소스, app/build.gradle, settings.gradle이 생성된다.
 
@@ -54,3 +54,21 @@ tasks.named('test') {
     useJUnitPlatform() 
 }
 ```
+
+### Run the application
+gradle run task로 application을 실행한다.
+실행한 결과가 나오게 된다.
+
+```bash
+gradle run
+```
+
+### Bundle the application
+gradle build task를 실행하면 app/build/libs 밑에 jar가 생기고, app/build/distributions/app.tar or app.zip이 생긴다.
+
+```bash
+gradle build
+```
+
+
+
